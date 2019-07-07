@@ -48,8 +48,8 @@ public class Lanzador {
 		
 		System.out.println(gestionPelicula.listarPelicula());
 		
-		peli1.setDirector("ATAWALPA");
-		peli7.setDirector("ATAWALPA");
+		peli1.setDirector("ATAWALPaA");
+		peli7.setDirector("ATAWALPaA");
 				
 		UPDATEPeliculas.add(peli1);
 		UPDATEPeliculas.add(peli7);		
