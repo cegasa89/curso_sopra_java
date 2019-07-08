@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sopra.videoclub</groupId>
 	<artifactId>ejercicioPeliculaNegocio</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 
 
 	<properties>
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>com.sopra.videoclub</groupId>
 			<artifactId>ejercicioPeliculaDao</artifactId>
-			<version>1.0.0</version>
+			<version>1.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>

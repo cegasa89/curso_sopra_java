@@ -1,4 +1,4 @@
-package com.sopra.java.patterns;
+package com.sopra.java.videoclub;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,11 +6,12 @@ import java.util.List;
 
 import com.sopra.java.model.business.GestorPelicula;
 import com.sopra.java.model.entities.Pelicula;
+import com.sopra.java.patterns.Factory;
 
 public class Lanzador {
 	public static void main(String[] args) {
 		
-		GestorPelicula gestionPelicula = new GestorPelicula();
+		GestorPelicula gestionPelicula = Factory.getPelicula();
 
 		List<Pelicula> altasPeliculas = new ArrayList<Pelicula>();
 		

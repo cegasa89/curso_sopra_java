@@ -5,12 +5,17 @@ import java.util.List;
 import java.util.Set;
 
 import com.sopra.java.model.dao.IPeliculaDao;
+import com.sopra.java.model.dao.PeliculaDaoImpl;
 import com.sopra.java.model.entities.Pelicula;
-import com.sopra.java.patterns.Factory;
 
 public class GestorPelicula {
 
-	private IPeliculaDao<Pelicula> peliculaDao = Factory.getPeliculaDao();
+	private IPeliculaDao<Pelicula> peliculaDao;
+
+	public GestorPelicula(IPeliculaDao<Pelicula> peliculaDao) {
+		super();
+		this.peliculaDao = peliculaDao;
+	}
 
 	public Set<Pelicula> altaPelicula(List<Pelicula> altasPeliculas) {
 		for (Pelicula pelicula : altasPeliculas) {
