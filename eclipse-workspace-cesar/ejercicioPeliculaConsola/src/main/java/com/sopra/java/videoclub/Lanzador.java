@@ -17,14 +17,14 @@ public class Lanzador {
 	private static ApplicationContext context;
 	
 	static {
-		context = new ClassPathXmlApplicationContext("factory.xml");
+		context = new ClassPathXmlApplicationContext("beans.xml");
 	}
 	
 	
 	
 	public static void main(String[] args) {
 
-		GestorPelicula gestionPelicula = context.getBean("gestorPelicula", GestorPelicula.class);
+		GestorPelicula gestionPelicula = context.getBean(GestorPelicula.class);
 
 		List<Pelicula> altasPeliculas = new ArrayList<Pelicula>();
 		

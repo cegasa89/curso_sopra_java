@@ -4,12 +4,18 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.sopra.java.model.dao.IPeliculaDao;
 import com.sopra.java.model.dao.PeliculaDaoImpl;
 import com.sopra.java.model.entities.Pelicula;
 
+
+@Service
 public class GestorPelicula {
 
+	@Autowired
 	private IPeliculaDao<Pelicula> peliculaDao;
 
 	public GestorPelicula(IPeliculaDao<Pelicula> peliculaDao) {
