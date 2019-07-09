@@ -4,14 +4,27 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.sopra.java.model.business.GestorPelicula;
 import com.sopra.java.model.entities.Pelicula;
 import com.sopra.java.patterns.Factory;
 
+
 public class Lanzador {
+	
+	private static ApplicationContext context;
+	
+	static {
+		context = new ClassPathXmlApplicationContext("factory.xml");
+	}
+	
+	
+	
 	public static void main(String[] args) {
-		
-		GestorPelicula gestionPelicula = Factory.getPelicula();
+
+		GestorPelicula gestionPelicula = context.getBean("gestorPelicula", GestorPelicula.class);
 
 		List<Pelicula> altasPeliculas = new ArrayList<Pelicula>();
 		
