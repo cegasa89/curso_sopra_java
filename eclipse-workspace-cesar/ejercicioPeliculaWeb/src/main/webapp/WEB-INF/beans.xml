@@ -2,11 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	<bean id="listaPeliculas" class="java.util.HashMap"/>
-	<context:component-scan base-package="com.sopra.java.model.entities"/>
-	<context:component-scan base-package="com.sopra.java.model.dao"/>
-	<context:component-scan base-package="com.sopra.java.model.business"/>
+
+	<bean id="viewResolverJSP"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsps/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<mvc:annotation-driven />
+	<bean id="listaPeliculas" class="java.util.HashMap" />
+	<context:component-scan
+		base-package="com.sopra.java.model.entities" />
+	<context:component-scan
+		base-package="com.sopra.java.model.dao" />
+	<context:component-scan
+		base-package="com.sopra.java.model.business" />
 
 </beans>
