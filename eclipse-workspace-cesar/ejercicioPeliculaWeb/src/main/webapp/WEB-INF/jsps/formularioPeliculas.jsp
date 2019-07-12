@@ -9,8 +9,7 @@
 <body>
 <marquee><h1>Formulario de Peliculas</h1></marquee>
 <form action="muestramelon">
-	Nombre: <input type="text" name="nombre"></br>
-	Director: <input type="text" name="director"></br>
+	Titulo: <input type="text" name="titulo"></br>
 	Director: <input type="text" name="director"></br>
 	Sinopsis: <input type="text" name="sinopsis"></br>
 	Categorias: <input type="text" name="categorias"></br>

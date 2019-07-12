@@ -4,16 +4,16 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
          <servlet>
-         	<servlet-name>beans</servlet-name>
+         	<servlet-name>spring_mvc</servlet-name>
          	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
          	<init-param>
          		<param-name>contextConfigLocation</param-name>
-         		<param-value>/WEB-INF/beans.xml</param-value>
+         		<param-value>/WEB-INF/spring_mvc.xml</param-value>
          	</init-param>
          	<load-on-startup>1</load-on-startup>
          </servlet>
          <servlet-mapping>
-         	<servlet-name>beans</servlet-name>
+         	<servlet-name>spring_mvc</servlet-name>
          	<url-pattern>/mvc/*</url-pattern>         
          </servlet-mapping>
 </web-app>

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Catalogo de peliculas</title>
 </head>
 <body>
-Peliculas: ${listarPelicula}
+Peliculas: ${listaDePeliculas}
 </body>
 </html>

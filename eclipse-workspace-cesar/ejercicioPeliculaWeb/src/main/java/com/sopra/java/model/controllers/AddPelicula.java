@@ -11,9 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sopra.java.model.business.GestorPelicula;
 import com.sopra.java.model.entities.Pelicula;
@@ -21,48 +27,44 @@ import com.sopra.java.model.entities.Pelicula;
 /**
  * Servlet implementation class AddPelicula
  */
-@WebServlet("/AddPelicula")
+@Controller
+@Scope("request")
 public class AddPelicula extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	private ApplicationContext context;
-	public static GestorPelicula gestorPelicula;
+	
+	@Autowired
+	public GestorPelicula gestorPelicula;
 
-	@Override
-	public void init() throws ServletException {
 
-		this.context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(getServletContext());
+	
+	
+	@RequestMapping("home")
+	public ModelAndView verFormulario() {
+		return new ModelAndView("formularioPeliculas");
 	}
+	
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	
+	@RequestMapping("muestramelon")
+	public ModelAndView muestramelon(@RequestParam("titulo") String titulo,@RequestParam("director") String director,
+			@RequestParam("sinopsis") String sinopsis,@RequestParam("categorias") String categorias) {
 		// TODO Auto-generated method stub
 		List<Pelicula> altasPeliculas = new ArrayList<Pelicula>();
-		gestorPelicula = context.getBean(GestorPelicula.class);
 
-		if (request.getParameter("titulo") != null) {
+		if (titulo != null) {
 			
-			Pelicula peli1 = new Pelicula(request.getParameter("titulo"), request.getParameter("director"),
-					request.getParameter("sinopsis"), request.getParameter("categorias"));
+			Pelicula peli1 = new Pelicula(titulo, director,
+					sinopsis, categorias);
 
 			altasPeliculas.add(peli1);
 
 			gestorPelicula.altaPelicula(altasPeliculas);
-
-			System.out.println(gestorPelicula.listarPelicula());
 			
-			GestorPelicula bean = context.getBean("gestorPelicula",GestorPelicula.class);
-			Set<Pelicula> listarPelicula = bean.listarPelicula();
-			request.setAttribute("listarPelicula",listarPelicula );
-
-			getServletContext().getRequestDispatcher("/WEB-INF/jsps/listar.jsp")
-			.forward(request, response);
+			ModelAndView modelAndView =  new ModelAndView("listar");
+			modelAndView.addObject("listaDePeliculas",gestorPelicula.listarPelicula() );
+			return modelAndView;
 
 		}
+		return null;
 	}
 
 }
