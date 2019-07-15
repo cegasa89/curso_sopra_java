@@ -1,9 +1,19 @@
 spring:
   application:
     name: pelicularestJpa
+  datasource:
+    url: 
+    username: 
+    password: 
+  jpa:
+    properties:
+      
+      
 server:
   port: 8989
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8813/eureka/
+      
+      
