@@ -1,6 +1,5 @@
-package com.sopra.spring.entities;
+package com.sopra.spring.ejerciciopeliculamodelorestjpa.entities;
 
-import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
