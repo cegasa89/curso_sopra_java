@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sopra.spring</groupId>
 	<artifactId>ejercicioPeliculaModeloRestJpa</artifactId>
-	<version>2.1.0</version>
+	<version>3.0.0</version>
 	<name>ejercicioPeliculaModeloRestJpa</name>
 	<description>ejercicioPeliculaModeloRestJpa</description>
 
@@ -52,6 +52,7 @@
 				spring-cloud-starter-netflix-eureka-client
 			</artifactId>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

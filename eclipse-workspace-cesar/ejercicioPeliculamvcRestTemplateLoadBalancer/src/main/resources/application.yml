@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ejerciciomvc
+server:
+  port: 8991
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:8813/eureka/
