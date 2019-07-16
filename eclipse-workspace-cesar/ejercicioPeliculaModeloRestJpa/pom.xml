@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sopra.spring</groupId>
 	<artifactId>ejercicioPeliculaModeloRestJpa</artifactId>
-	<version>3.0.0</version>
+	<version>4.0.0</version>
 	<name>ejercicioPeliculaModeloRestJpa</name>
 	<description>ejercicioPeliculaModeloRestJpa</description>
 

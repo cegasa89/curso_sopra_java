@@ -2,12 +2,14 @@ spring:
   application:
     name: pelicularestJpa
   datasource:
-    url: 
-    username: 
-    password: 
+    url: jdbc:mysql://localhost:13306/mysql
+    username: root
+    password: root
   jpa:
-    properties:
-      
+    hibernate:
+      ddl-auto: create
+    
+         
       
 server:
   port: 8989
