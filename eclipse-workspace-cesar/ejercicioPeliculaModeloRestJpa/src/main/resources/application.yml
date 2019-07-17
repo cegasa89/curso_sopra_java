@@ -1,21 +1,16 @@
 spring:
   application:
-    name: pelicularestJpa
+    name: pelicularesJpa
   datasource:
-    url: jdbc:mysql://localhost:13306/mysql
+    url: jdbc:mysql://mysql-server:3306/mysql
     username: root
     password: root
   jpa:
     hibernate:
       ddl-auto: create
-    
-         
-      
-server:
-  port: 8989
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8813/eureka/
+       defaultZone: http://eureka-server:8761/eureka/
       
       

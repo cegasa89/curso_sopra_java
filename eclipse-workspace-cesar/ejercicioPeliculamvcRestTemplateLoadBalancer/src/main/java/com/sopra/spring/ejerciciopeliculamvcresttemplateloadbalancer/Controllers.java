@@ -34,7 +34,7 @@ public class Controllers {
 
 	@RequestMapping("/listadoDePeliculas")
 	public String listadoDePeliculas(Model model) {
-		String urlDeAccesoAlServicio = "http://pelicularestJpa/pelicula";
+		String urlDeAccesoAlServicio = "http://pelicularesJpa/pelicula";
 		ResponseEntity<List> respuestaDelServidor = restTemplate.exchange(
 				urlDeAccesoAlServicio, 
 				HttpMethod.GET, 
@@ -51,7 +51,7 @@ public class Controllers {
 			@RequestParam("sinopsis") String sinopsis,
 			@RequestParam("categorias") String categorias,
 			Model model) {
-		String urlDeAccesoAlServicio = "http://pelicularestJpa/pelicula";
+		String urlDeAccesoAlServicio = "http://pelicularesJpa/pelicula";
 		Pelicula pelicula = new Pelicula(titulo, director, sinopsis, categorias);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
