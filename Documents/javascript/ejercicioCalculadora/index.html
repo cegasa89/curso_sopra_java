@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>calculadora</title>
+        <script type="text/javascript" src="js/calculos.js"></script>
+    </head>
+    <body>
+        <form name="calculator">
+            <p>Haz algun calculo para ver el resultado.</p>
+            <input type="textfield" id="pantalla" name="pantalla" value="" readonly="readonly">
+            <br>
+            <input type="button" value="1" onClick="pantalla.value+='1'">
+            <input type="button" value="2" onClick="pantalla.value+='2'">
+            <input type="button" value="3" onClick="pantalla.value+='3'">
+            <input type="button" value="+" onClick="pantalla.value+='+'">
+            <br>
+            <input type="button" value="4" onClick="pantalla.value+='4'">
+            <input type="button" value="5" onClick="pantalla.value+='5'">
+            <input type="button" value="6" onClick="pantalla.value+='6'">
+            <input type="button" value="-" onClick="pantalla.value+='-'">
+            <br>
+            <input type="button" value="7" onClick="pantalla.value+='7'">
+            <input type="button" value="8" onClick="pantalla.value+='8'">
+            <input type="button" value="9" onClick="pantalla.value+='9'">
+            <input type="button" value="*" onClick="pantalla.value+='*'">
+            <br>
+            <input type="button" value="0" onClick="pantalla.value+='0'">
+            <input type="reset" value="c">
+            <input type="button" value="/" onClick="pantalla.value+='/'">
+            <input type="button" value="=" onClick="calculo()">
+        </form>
+    </body>
+
+
+</html>
