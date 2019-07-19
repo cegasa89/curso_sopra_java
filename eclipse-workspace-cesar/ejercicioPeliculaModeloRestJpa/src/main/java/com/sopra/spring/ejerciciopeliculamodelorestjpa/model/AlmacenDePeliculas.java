@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.sopra.spring.ejerciciopeliculamodelorestjpa.entities.Pelicula;
 
 
-@Repository
+//@Repository
 public interface AlmacenDePeliculas extends JpaRepository<Pelicula, Integer> {
 
 }
